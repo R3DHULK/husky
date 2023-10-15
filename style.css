@@ -1,0 +1,261 @@
+:root {
+  --note-pos-1: translate(530px, 150px) rotate(20deg);
+  --note-pos-2: translate(450px, 300px) rotate(-15deg);
+  --note-pos-3: translate(1050px, 230px) rotate(10deg);
+  --note-pos-4: translate(1020px, 400px) rotate(-15deg);
+  --note-pos-5: translate(975px, 150px) rotate(-20deg);
+  --note-pos-d-1: translate(530px, 150px) rotate(-20deg);
+  --note-pos-d-2: translate(450px, 300px) rotate(15deg);
+  --note-pos-d-3: translate(1050px, 230px) rotate(-10deg);
+  --note-pos-d-4: translate(1020px, 400px) rotate(15deg);
+  --note-pos-d-5: translate(975px, 150px) rotate(20deg);
+  --animation-time: 0.6s;
+}
+
+@keyframes left-leg-animation {
+  100% {
+    transform: translate(1066px, 714px) scaleX(1.03);
+  }
+}
+.shake-left-leg {
+  animation: left-leg-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+@keyframes right-leg-animation {
+  100% {
+    transform: translate(856px, 714px) scaleX(1.03);
+  }
+}
+.shake-right-leg {
+  animation: right-leg-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#head {
+  transform-origin: center;
+  transform: rotate(9deg) translate(-23px, -40px);
+}
+
+#tongue {
+  transform: translate(1103px, 477px) rotate(-9deg);
+}
+
+#belly {
+  cursor: pointer;
+}
+
+#left-leg {
+  transform: translate(1066px, 714px);
+}
+
+#right-leg {
+  transform: translate(856px, 714px);
+}
+
+.info {
+  margin-bottom: 10px;
+  font-size: 25px;
+  font-family: "Sacramento", cursive;
+}
+
+.shake-head {
+  animation: shake-head-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+.toggle-tongue {
+  animation: toggle-tongue-animation 0.8s 0s ease-in-out infinite alternate;
+}
+
+.shake-main-belly {
+  animation: shake-main-belly-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+.shake-main-belly-shadow {
+  animation: shake-main-belly-shadow-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+.shake-sub-belly {
+  animation: shake-sub-belly-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+.shake-sub-belly-shadow {
+  animation: shake-sub-belly-shadow-animation var(--animation-time) 0s ease-in-out infinite alternate;
+}
+
+#main-body {
+  transform: translate(976px, 446px);
+}
+
+@keyframes shake-main-belly-animation {
+  0% {
+    transform: translate(976px, 446px) skew(-1deg);
+  }
+  100% {
+    transform: translate(976px, 446px) skew(1deg);
+  }
+}
+#sub-body {
+  transform: translate(1037px, 507px);
+}
+
+@keyframes shake-sub-belly-animation {
+  0% {
+    transform: translate(1037px, 507px) skew(-1deg);
+  }
+  100% {
+    transform: translate(1037px, 507px) skew(1deg);
+  }
+}
+#main-body-shadow {
+  transform: translate(1116px, 420px);
+}
+
+@keyframes shake-main-belly-shadow-animation {
+  0% {
+    transform: translate(1116px, 420px) skew(-1deg);
+  }
+  100% {
+    transform: translate(1116px, 420px) skew(1deg);
+  }
+}
+#sub-body-shadow {
+  transform: translate(1174px, 489px);
+}
+
+@keyframes shake-sub-belly-shadow-animation {
+  0% {
+    transform: translate(1174px, 489px) skew(-1deg);
+  }
+  100% {
+    transform: translate(1174px, 489px) skew(1deg);
+  }
+}
+.closed-eyes {
+  display: none;
+}
+
+@keyframes toggle-tongue-animation {
+  0% {
+    transform: translate(1104px, 477px) rotate(-9deg) scale(0.9);
+  }
+  100% {
+    transform: translate(1104px, 478px) rotate(-9deg);
+  }
+}
+.notes {
+  transform: translate(775px, 450px);
+  transform-origin: 0px 0px;
+  fill: #e23939;
+}
+
+@keyframes notes-move-1 {
+  100% {
+    transform: var(--note-pos-1);
+  }
+}
+@keyframes notes-dance-1 {
+  0% {
+    transform: var(--note-pos-1);
+  }
+  100% {
+    transform: var(--note-pos-d-1);
+  }
+}
+.play.note-1 {
+  transform-origin: 25px 25px;
+  animation: notes-move-1 var(--animation-time) 1 forwards, notes-dance-1 var(--animation-time) var(--animation-time) ease-in-out infinite alternate;
+}
+
+@keyframes notes-move-2 {
+  100% {
+    transform: var(--note-pos-2);
+  }
+}
+@keyframes notes-dance-2 {
+  0% {
+    transform: var(--note-pos-2);
+  }
+  100% {
+    transform: var(--note-pos-d-2);
+  }
+}
+.play.note-2 {
+  transform-origin: 25px 25px;
+  animation: notes-move-2 var(--animation-time) 1 forwards, notes-dance-2 var(--animation-time) var(--animation-time) ease-in-out infinite alternate;
+}
+
+@keyframes notes-move-3 {
+  100% {
+    transform: var(--note-pos-3);
+  }
+}
+@keyframes notes-dance-3 {
+  0% {
+    transform: var(--note-pos-3);
+  }
+  100% {
+    transform: var(--note-pos-d-3);
+  }
+}
+.play.note-3 {
+  transform-origin: 25px 25px;
+  animation: notes-move-3 var(--animation-time) 1 forwards, notes-dance-3 var(--animation-time) var(--animation-time) ease-in-out infinite alternate;
+}
+
+@keyframes notes-move-4 {
+  100% {
+    transform: var(--note-pos-4);
+  }
+}
+@keyframes notes-dance-4 {
+  0% {
+    transform: var(--note-pos-4);
+  }
+  100% {
+    transform: var(--note-pos-d-4);
+  }
+}
+.play.note-4 {
+  transform-origin: 25px 25px;
+  animation: notes-move-4 var(--animation-time) 1 forwards, notes-dance-4 var(--animation-time) var(--animation-time) ease-in-out infinite alternate;
+}
+
+@keyframes notes-move-5 {
+  100% {
+    transform: var(--note-pos-5);
+  }
+}
+@keyframes notes-dance-5 {
+  0% {
+    transform: var(--note-pos-5);
+  }
+  100% {
+    transform: var(--note-pos-d-5);
+  }
+}
+.play.note-5 {
+  transform-origin: 25px 25px;
+  animation: notes-move-5 var(--animation-time) 1 forwards, notes-dance-5 var(--animation-time) var(--animation-time) ease-in-out infinite alternate;
+}
+
+@keyframes shake-head-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(18deg) translate(-60px, -85px);
+  }
+}
